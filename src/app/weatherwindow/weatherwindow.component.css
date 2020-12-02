@@ -1,0 +1,23 @@
+.weatherwindow-head {
+    font-weight: bold;
+}
+
+.weatherwindow-label {
+    color: #DA122A !important;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.weatherwindow-body {
+    margin-top: 10px;
+    border: 1px solid #686868;
+    color: #DA122A !important;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+p {
+    font-weight: bold;
+}

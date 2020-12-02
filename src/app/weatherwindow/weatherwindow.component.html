@@ -1,0 +1,22 @@
+<div class="row">
+    <p class="weatherwindow-head">Welcome to Openweathermap. You can check weather of your interested city here!. We are
+        providing highly recognisable weather products that make working with the weather data a way easier. We work
+        with millions of developers around a clock and believe that these benefits might be suitable for most of
+        applications, up to the complex enterprise systems.</p>
+</div>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <label class="weatherwindow-label">Enter city to check weather: </label><br>
+        <input type="text" [(ngModel)]="cityName"><br>
+        <button type="button" class="btn btn-danger" (click)="checkWeather()">Submit</button>
+
+        <div *ngIf="checkWeatherDataisPresent" class="weatherwindow-body">
+            <p>Humidity: {{humidity}}%</p>
+            <p>Temperature: {{temperature}}F</p>
+            <p>Weather: {{weather}}</p>
+            <p>Wind Speed: {{wind}}km/h</p>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
