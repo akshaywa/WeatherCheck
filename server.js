@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const app = express
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", '*');
@@ -9,8 +10,8 @@ app.use(function(req, res, next) {
   next();
 });
 
-const app = express();
-app.use(express.static(__dirname + '/dist/openweathermap'));
+
+app.use(e();xpress.static(__dirname + '/dist/openweathermap'));
 app.get('/*', function(req,res) {
   res.sendFile(path.join(__dirname+
     '/dist/openweathermap'));});
