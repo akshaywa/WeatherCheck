@@ -9,11 +9,14 @@ import { ApicallService } from '../apicall.service';
 
 export class WeatherwindowComponent implements OnInit, DoCheck {
   cityName: string;
+  countryName: string;
   humidity: string;
   temperature: string;
   weather: string;
   wind: string;
   checkWeatherDataisPresent: boolean;
+  submitCityName: string;
+  submitCountryName: string;
 
   constructor(private apicallService: ApicallService) { }
 
@@ -21,7 +24,9 @@ export class WeatherwindowComponent implements OnInit, DoCheck {
   }
 
   checkWeather(): void {
-    this.apicallService.getWeatherData(this.cityName).then((weatherData: any) => {
+    this.submitCityName = this.cityName;
+    this.submitCountryName = this.countryName;
+    this.apicallService.getWeatherData(this.cityName, this.countryName).then((weatherData: any) => {
       this.humidity = weatherData.main.humidity,
         this.temperature = weatherData.main.temp,
         this.weather = weatherData.weather[0].main,
@@ -33,7 +38,7 @@ export class WeatherwindowComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck() {
-    if (!this.cityName) {
+    if (this.submitCityName !== this.cityName || this.submitCountryName !== this.countryName) {
       this.checkWeatherDataisPresent = false;
     }
   }

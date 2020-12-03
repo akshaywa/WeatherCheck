@@ -4,11 +4,13 @@
         with millions of developers around a clock and believe that these benefits might be suitable for most of
         applications, up to the complex enterprise systems.</p>
 </div>
-<div class="row">
+<div class="row weatherwindow-wrap">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <label class="weatherwindow-label">Enter city to check weather: </label><br>
+        <label class="weatherwindow-label">Enter City to check weather: </label><br>
         <input type="text" [(ngModel)]="cityName"><br>
+        <label class="weatherwindow-label">OR/AND Enter Country to check weather: </label><br>
+        <input type="text" [(ngModel)]="countryName"><br>
         <button type="button" class="btn btn-danger" (click)="checkWeather()">Submit</button>
 
         <div *ngIf="checkWeatherDataisPresent" class="weatherwindow-body">
