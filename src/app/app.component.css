@@ -1,15 +1,12 @@
 .app-container {
-    width: 96%;
+    width: 100%;
 }
 
 .app-head {
     text-align: center;
 }
 
-.app-body {
-    margin: 30px;
-}
-
 .app-container {
     color: #787878;
 }
+
