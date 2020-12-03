@@ -1,46 +1,20 @@
-// const express = require('express');
-// const path = require('path');
-// const cors = require('cors');
-
-// const app = express();
-// app.use(express.static(__dirname + '/dist/openweathermap'));
-// app.get('/*', function(req,res) {
-//   res.sendFile(path.join(__dirname+
-//     '/dist/openweathermap'));});
-// app.listen(process.env.PORT || 8080);
-
-
 const express = require('express');
 const path = require('path');
-const cors = require('cors');
 
-const app = express();
-
-// add this code
-const whitelist = ['http://localhost:4200']; // list of allow domain
-
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (!origin) {
-            return callback(null, true);
-        }
-
-        if (whitelist.indexOf(origin) === -1) {
-            var msg = 'The CORS policy for this site does not ' +
-                'allow access from the specified Origin.';
-            return callback(new Error(msg), false);
-        }
-        return callback(null, true);
-    }
-}
-
-// end 
-app.use(cors(corsOptions));
-
-app.use(express.static('./dist/openweathermap'));
-
-app.get('/',function(req,res){
-    res.sendFile(path.join(__dirname+'/dist/openweathermap'));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", '*');
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+  next();
 });
 
+const app = express();
+app.use(express.static(__dirname + '/dist/openweathermap'));
+app.get('/*', function(req,res) {
+  res.sendFile(path.join(__dirname+
+    '/dist/openweathermap'));});
 app.listen(process.env.PORT || 8080);
+
+
+
