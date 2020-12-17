@@ -22,8 +22,8 @@ export class CalculatorComponent {
   }
 
   calculateAns(): void {
-    this.newValue = eval(this.newEqn + this.newValue);
-    this.newEqn = '';
+    this.newEqn = this.newEqn + this.newValue;
+    this.newValue = eval(this.newEqn);
   }
 
   clearAll(): void {
