@@ -3,10 +3,8 @@
 }
 
 .app-head {
-    text-align: center;
-}
-
-.app-container {
-    color: #787878;
+    height: 70px;
+    color: white;
+    background-color: blueviolet;
 }
 

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { WeatherwindowComponent } from './weatherwindow/weatherwindow.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/weatherwindow', pathMatch: 'full' },
-  { path: 'weatherwindow', component: WeatherwindowComponent },
+  { path: '', redirectTo: '/calculator', pathMatch: 'full' },
+  { path: 'calculator', component: CalculatorComponent },
 ];
 
 @NgModule({

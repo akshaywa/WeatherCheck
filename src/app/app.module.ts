@@ -5,13 +5,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { WeatherwindowComponent } from './weatherwindow/weatherwindow.component';
 import { FormsModule } from '@angular/forms';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherwindowComponent
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,39 @@
+<div class="calculator-body">
+    <div class="calculator-screen">
+        <p>{{newEqn}}</p>
+    </div>
+    <div class="calculator-screen" >
+        <p>{{newValue}}</p>
+    </div>
+    <div class="calculator-buttons">
+        <table>
+            <tr>
+                <td colspan="2"><button id="allcorrect" class="btn btn-danger" (click)="clearAll()">AC</button></td>
+                <td><button id="division" class="btn btn-secondary" value="/" (click)="getEquation($event)">/</button></td>
+                <td><button type="multiplication" class="btn btn-secondary" value="*" (click)="getEquation($event)">*</button></td>
+            </tr>
+            <tr>
+                <td><button id="one" class="btn btn-light" value="1" (click)="getNewValue($event)">1</button></td>
+                <td><button id="two" class="btn btn-light" value="2" (click)="getNewValue($event)">2</button></td>
+                <td><button id="three" class="btn btn-light" value="3" (click)="getNewValue($event)">3</button></td>
+                <td><button type="subtraction" class="btn btn-secondary" value="-" (click)="getEquation($event)">-</button></td>
+            </tr>
+            <tr>
+                <td><button id="four" class="btn btn-light" value="4" (click)="getNewValue($event)">4</button></td>
+                <td><button id="five" class="btn btn-light" value="5" (click)="getNewValue($event)">5</button></td>
+                <td><button id="six" class="btn btn-light" value="6" (click)="getNewValue($event)">6</button></td>
+                <td><button type="addition" class="btn btn-secondary" value="+" (click)="getEquation($event)">+</button></td>
+            </tr>
+            <tr>
+                <td><button id="seven" class="btn btn-light" value="7" (click)="getNewValue($event)">7</button></td>
+                <td><button id="eight" class="btn btn-light" value="8" (click)="getNewValue($event)">8</button></td>
+                <td><button id="nine" class="btn btn-light" value="9" (click)="getNewValue($event)">9</button></td>
+                <td rowspan="2"><button type="equal" class="btn btn-warning" (click)="calculateAns()">=</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="zero" class="btn btn-light"value="0" (click)="getNewValue($event)">0</button></td>
+                <td><button id="point" class="btn btn-light" value="." (click)="getNewValue($event)">.</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
